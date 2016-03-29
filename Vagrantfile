@@ -10,4 +10,10 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "dbs.server"
 
   config.vm.network :private_network, ip: "192.168.56.101"
+
+  config.vm.provision "puppet" do |puppet|
+    puppet.manifests_path = "__provision__/manifests"
+    puppet.manifest_file = "default.pp"
+    puppet.module_path = "__provision__/modules"
+  end
 end
