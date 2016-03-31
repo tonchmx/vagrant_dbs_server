@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "dbs.server"
 
   config.vm.network :private_network, ip: "192.168.56.101"
+  config.vm.network :forwarded_port, guest: 27017, host: 27017 #mongo
 
   config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = "__provision__/manifests"
