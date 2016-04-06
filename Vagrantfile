@@ -2,6 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
+  config.vm.define "dbs_server" do |dbs|
+  end
+
   config.vm.provider "virtualbox" do |vb|
     vb.name = "DBs Server"
   end
